@@ -47,6 +47,8 @@ function getCocktails(e){
                 break;
         }
 
+        ui.clearResults();
+
         // Query by the name of the drink
         cocktail.getDrinksByName( searchTerm )
         .then(cocktails => {
@@ -59,7 +61,7 @@ function getCocktails(e){
                     ui.displayDrinksWithIngredients(cocktails.cocktails.drinks);
                 }else {
                     // Display withoug ingredients (category, alcohol, ingredient)
-                    ui.displayDrink(cocktails.cocktails.drinks);
+                    ui.displayDrinks(cocktails.cocktails.drinks);
                 }
             }
         })
