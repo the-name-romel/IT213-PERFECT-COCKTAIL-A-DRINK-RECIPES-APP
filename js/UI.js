@@ -47,7 +47,7 @@ class UI {
 
     // Prints the Ingredients and Measurements
     displayIngredients(drink) {
-        console.log(drink)
+        // console.log(drink)
 
         let ingredients = [];
         for(let i = 1; i < 16; i++) {

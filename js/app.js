@@ -30,6 +30,20 @@ function getCocktails(e){
         // Call user interface print message
         ui.printMessage('Please add something into the form', 'danger');
     }else {
+        // Server response from promise
+        let serverResponse;
+
+        // Type of search (ingredients, cocktails, or name)
+        const type = document.querySelector('#type').value;
+
+        // Evaluate the type of method and then execute the query
+
+        switch(type) {
+            case 'name':
+                serverResponse = cocktail.getDrinksByName(searchTerm);
+                break;
+        }
+
         // Query by the name of the drink
         cocktail.getDrinksByName( searchTerm )
         .then(cocktails => {
