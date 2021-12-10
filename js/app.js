@@ -37,7 +37,7 @@ function getCocktails(e){
                 // Nothing exists
                 ui.printMessage('There\'re no result, try a different term', 'danger');
             }else {
-                console.log(cocktails);
+                ui.displayDrinksWithIngredients(cocktails.cocktails.drinks);
             }
         })
     }
