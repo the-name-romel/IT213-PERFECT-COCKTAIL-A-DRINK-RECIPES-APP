@@ -12,6 +12,12 @@ function eventListeners(){
     if(searchForm) {
         searchForm.addEventListener('submit', getCocktails);
     }
+
+    // The results div listeners
+    const resultsDiv = document.querySelector('#results');
+    if(resultsDiv) {
+        resultsDiv.addEventListener('click', resultsDelegation)
+    }
 }
 
 eventListeners();
@@ -65,5 +71,17 @@ function getCocktails(e){
                 }
             }
         })
+    }
+}
+
+// Delegation for the results area
+function resultsDelegation(e) {
+    e.preventDefault();
+
+    if(e.target.classList.contains('get-recipe')) {
+        cocktail.getSingleRecipe(e.target.dataset.id)
+            .then(recipe => {
+                console.log(recipe)
+            })
     }
 }
