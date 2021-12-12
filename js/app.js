@@ -94,7 +94,7 @@ function resultsDelegation(e) {
             })
     }
     
-    // When favorite btin is clicked
+    // When favorite btn is clicked
     if(e.target.classList.contains('favorite-btn')) {
         if(e.target.classList.contains('is-favorite')) {
             // Remove the class
@@ -135,5 +135,25 @@ function documentReady() {
         // Get the favorites from storage and display them
         const drinks = cocktailDB.getFromDB();
         ui.displayFavorites(drinks);
+
+        // When view or delete are clicked
+
+        favoritesTable.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Delegation
+            if(e.target.classList.contains('get-recipe')){
+                cocktail.getSingleRecipe(e.target.dataset.id)
+                    .then(recipe => {
+                        // Displays single recipe into a modal
+                        ui.displaySingleRecipe(recipe.recipe.drinks[0]);
+                    })
+            }
+            // When remove button is clicked in favorites
+            if(e.target.classList.contains('remove-recipe')) {
+                // Remove from DOM
+                ui.removeFavorite(e.target.parentElement.parentElement);
+            }
+        })
     }
 }

@@ -192,4 +192,8 @@ class UI {
             favoritesTable.appendChild(tr);
         })
     }
+    // Remove single favorite from DOM
+    removeFavorite(element) {
+        element.remove();
+    }
 }
