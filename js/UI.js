@@ -34,6 +34,9 @@ class UI {
             resultsDiv.innerHTML += `
                 <div class="col-md-4">
                     <div class="card my-3">
+                        <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
+                        +
+                        </button>
                         <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
                         <div class="card-body">
                         <h2 class="card-title text-center">${drink.strDrink}</h2>
@@ -59,6 +62,9 @@ class UI {
             resultsDiv.innerHTML += `
                 <div class="col-md-6">
                     <div class="card my-3">
+                        <button type="button" data-id="${drink.idDrink}" class="favorite-btn btn btn-outline-info">
+                        +
+                        </button>
                         <img class="card-img-top" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
 
                         <div class="card-body">
